@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'photo_handler/style.css' %}">
+    <meta charset="UTF-8">
+    <title>{% block title %}C.E.C.S.{% endblock %}</title>
+</head>
+<body>
+    <div id="sidebar">
+        {% block sidebar %}
+        <ul>
+            <li><a href="?">ACCUEIL</a></li>
+            <li><a href="?">COMITE</a></li>
+            <li><a href="?">EVENEMENTS</a></li>
+            <li><a href="?">PHOTOS</a></li>
+            <li><a href="?">CHANTS</a></li>
+            <li><a href="?">JOURNAUX</a></li>
+            <li><a href="?">ARCHIVES</a></li>
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
