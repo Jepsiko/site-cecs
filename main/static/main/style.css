@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Bebas Neue";
+  src: url('../fonts/BebasNeue-Regular.ttf') format("truetype");
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: xx-large;
+    color: black;
+}
+
+li a:hover {
+    background-color: lightgrey;
+    color: black;
+}
+
+.active {
+    background-color: midnightblue;
+    color: whitesmoke;
+}
