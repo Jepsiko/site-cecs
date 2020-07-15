@@ -3,13 +3,14 @@
 <head>
     {% load static %}
 
-    <link rel="stylesheet" type="text/css" href="{% static 'photo_handler/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
     <meta charset="UTF-8">
-    <title>{% block title %}C.E.C.S.{% endblock %}</title>
+    <title>{% block title %}CECS ULB{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{% static 'images/favicon-transparent.png' %}"/>
 </head>
 <body>
-    <div id="sidebar">
-        {% block sidebar %}
+    <div id="navbar">
+        {% block navbar %}
         <ul>
             <li><a href="?">ACCUEIL</a></li>
             <li><a href="?">COMITE</a></li>
