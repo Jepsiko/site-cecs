@@ -1,0 +1,30 @@
+
+{% extends "main/base.html" %}
+
+{% block pagename %}{{ block.super }} - Inscription{% endblock %}
+
+{% block content %}
+
+    <h2>Inscription</h2>
+    <form method="post" class="register-form">
+        {% csrf_token %}
+
+        {% for field in registration_form %}
+            <p class="register-text">
+                {{ field.label_tag }}
+                {{ field }}
+
+                {% if field.help_text %}
+                    <small style="color: gray;">{{ field.help_text }}</small>
+                {% endif %}
+
+                {% for error in field.errors %}
+                    <small style="color: red;">{{ error }}</small>
+                {% endfor %}
+            </p>
+        {% endfor %}
+
+        <button type="submit">S'inscrire</button>
+    </form>
+
+{% endblock %}

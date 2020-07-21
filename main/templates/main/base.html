@@ -5,17 +5,43 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
     <meta charset="UTF-8">
-    <title>{% block title %}CECS ULB{% endblock %}</title>
-    <link rel="icon" type="image/png" href="{% static 'images/favicon-transparent.png' %}"/>
+    <title>{% block pagename %}CECS ULB{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}"/>
 </head>
 <body>
-    <div id="navbar">
+    <div class="header-bar">
+        <ul>
+            <li class="cecs-name">Cercle des Etudiants du Centre et Sympathisants</li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'main:logout' %}">Déconnexion</a></li>
+                <li><a href="?">{{ user }}</a></li>
+            {% else %}
+                <li><a href="{% url 'main:login' %}">Connexion</a></li>
+                <li><a href="{% url 'main:register' %}">Inscription</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <header>
+        <div class="polygon-left">
+            <img src="{% static "images/carnaval.jpg" %}" alt="">
+        </div>
+        <div class="polygon-right">
+            <img src="{% static "images/drapeau.png" %}" alt="">
+        </div>
+        <div class="title">
+            <img src="{% static "images/logo-white.png" %}" alt="">
+            <h1>LE CECS ULB</h1>
+        </div>
+    </header>
+
+    <div class="navbar">
         {% block navbar %}
         <ul>
-            <li><a href="?">ACCUEIL</a></li>
-            <li><a href="?">COMITE</a></li>
+            <li><a href="{% url 'main:index' %}">ACCUEIL</a></li>
+            <li><a href="{% url 'main:comite' %}">COMITE</a></li>
             <li><a href="?">EVENEMENTS</a></li>
-            <li><a href="?">PHOTOS</a></li>
+            <li><a href="{% url 'main:photo' %}">PHOTOS</a></li>
             <li><a href="?">CHANTS</a></li>
             <li><a href="?">JOURNAUX</a></li>
             <li><a href="?">ARCHIVES</a></li>
@@ -23,8 +49,13 @@
         {% endblock %}
     </div>
 
-    <div id="content">
+    <div class="content">
         {% block content %}{% endblock %}
     </div>
+
+    <footer>
+        <p>Contact : cecs.ulb@gmail.com</p>
+        <p>Site créé par Arthur Pierrot</p>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,36 @@
+
+{% extends "main/base.html" %}
+
+{% block pagename %}{{ block.super }} - Inscription{% endblock %}
+
+{% block content %}
+
+    <h2>Connexion</h2>
+    <form method="post" class="register-form">
+        {% csrf_token %}
+
+        {% for field in login_form %}
+            <p class="register-text">
+                {{ field.label_tag }}
+                {{ field }}
+
+                {% if field.help_text %}
+                    <small style="color: gray;">{{ field.help_text }}</small>
+                {% endif %}
+
+                {% for error in field.errors %}
+                    <small style="color: red;">{{ error }}</small>
+                {% endfor %}
+
+                {% if login_form.non_field_errors %}
+                    <div style="color: red;">
+                        <p>{{ login_form.non_field_errors }}</p>
+                    </div>
+                {% endif %}
+            </p>
+        {% endfor %}
+
+        <button type="submit">Se connecter</button>
+    </form>
+
+{% endblock %}

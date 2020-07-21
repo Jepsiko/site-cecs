@@ -1,0 +1,45 @@
+
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block pagename %}{{ block.super }} - Comité{% endblock %}
+
+{% block navbar %}
+    <ul>
+        <li><a href="{% url 'main:index' %}">ACCUEIL</a></li>
+        <li><a href="{% url 'main:comite' %}" class="active">COMITE</a></li>
+        <li><a href="?">EVENEMENTS</a></li>
+        <li><a href="{% url 'main:photo' %}">PHOTOS</a></li>
+        <li><a href="?">CHANTS</a></li>
+        <li><a href="?">JOURNAUX</a></li>
+        <li><a href="?">ARCHIVES</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <div class="comite-title">
+        <h2>Comité du CECS</h2>
+        <h3>2020-2021</h3>
+    </div>
+
+    <div class="comite-grid">
+        {% if comite %}
+            {% for staff in comite|slice:":5" %}
+                <div class="comite-bureau">
+                    <img src="{{ staff.photo.url }}" alt="">
+                    <a class="post-name" href="{% url 'main:post' staff.post.id %}">{{ staff.post }}</a>
+                    <br>
+                    <a class="user" href="{% url 'main:account' staff.id %}">{{ staff.first_name }} {{ staff.last_name }}</a>
+                </div>
+            {% endfor %}
+            {% for staff in comite|slice:"5:" %}
+                <div>
+                    <img src="{{ staff.photo.url }}" alt="">
+                    <a class="post-name" href="{% url 'main:post' staff.post.id %}">{{ staff.post }}</a>
+                    <br>
+                    <a class="user" href="{% url 'main:account' staff.id %}">{{ staff.first_name }} {{ staff.last_name }}</a>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

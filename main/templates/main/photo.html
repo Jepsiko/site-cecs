@@ -1,0 +1,35 @@
+
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block pagename %}{{ block.super }} - Photos{% endblock %}
+
+{% block navbar %}
+    <ul>
+        <li><a href="{% url 'main:index' %}">ACCUEIL</a></li>
+        <li><a href="{% url 'main:comite' %}">COMITE</a></li>
+        <li><a href="?">EVENEMENTS</a></li>
+        <li><a href="{% url 'main:photo' %}" class="active">PHOTOS</a></li>
+        <li><a href="?">CHANTS</a></li>
+        <li><a href="?">JOURNAUX</a></li>
+        <li><a href="?">ARCHIVES</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    {% if albums %}
+        <div class="albums">
+            {% for album in albums %}
+                <div class="album">
+                    <h2>{{ album.name }}</h2>
+                    <h3>{{ album.pub_date|date:'d/m/Y'}}</h3>
+                    <div class="photos">
+                        {% for photo in album.get_photos %}
+                            <img src="{{ photo.image.url }}" alt="">
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

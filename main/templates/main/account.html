@@ -1,0 +1,41 @@
+
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block pagename %}{{ block.super }} - {{ account.first_name }} {{ account.last_name }}{% endblock %}
+
+{% block navbar %}
+    <ul>
+        <li><a href="{% url 'main:index' %}">ACCUEIL</a></li>
+        <li><a href="{% url 'main:comite' %}" class="active">COMITE</a></li>
+        <li><a href="?">EVENEMENTS</a></li>
+        <li><a href="{% url 'main:photo' %}">PHOTOS</a></li>
+        <li><a href="?">CHANTS</a></li>
+        <li><a href="?">JOURNAUX</a></li>
+        <li><a href="?">ARCHIVES</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <div class="account">
+        {% if account %}
+            <h2>{{ account.first_name }} {{ account.last_name }}</h2>
+            <div>
+                <img src="{{ account.photo.url }}" alt="">
+                <div class="coord">
+                    <h4>Coordonnées</h4>
+                    {% if account.display_email %}
+                        <p>Adresse mail : {{ account.email }}</p>
+                    {% endif %}
+                    {% if account.display_phone_number and account.phone_number %}
+                        <p>Numéro de téléphone : {{ account.phone_number }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% if account.description %}
+                <h4>Description</h4>
+                <p>{{ account.description }}</p>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}
