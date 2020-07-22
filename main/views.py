@@ -2,7 +2,7 @@ from django.views import generic
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 
-from .models import Album, Photo, Account, Post
+from .models import Album, Account, Post
 from .forms import RegistrationForm, AccountAuthentificationForm
 
 
@@ -37,7 +37,7 @@ class PhotoView(generic.ListView):
 	context_object_name = 'albums'
 
 	def get_queryset(self):
-		return Album.objects.all()
+		return Album.objects.all().order_by('-pub_date')
 
 
 class AccountView(generic.DetailView):
