@@ -277,7 +277,7 @@ header {
 	}
 
 	.dropdown_btn img {
-		width: 8vw;
+		width: auto;
 		height: 8vw;
 		margin: 1.5vw;
 	}
@@ -285,8 +285,9 @@ header {
 	.navbar {
 		display: flex;
 		justify-content: right;
-		position: relative;
+		position: sticky;
 		width: 100%;
+		height: 15vw;
 		top: 0;
 	}
 
@@ -315,7 +316,7 @@ h2 {
 h2:after {
 	content: "";
 	position: absolute;
-	top: 110%;
+	top: 125%;
 	left: 50%;
 	width: 100px;
 	border-radius: 4px;
@@ -332,11 +333,11 @@ h3 {
 @media screen and (max-width: 800px) {
 	h2 {
 		font-size: 8vw;
+		padding-top: 7vw;
 	}
 
 	h3 {
-		padding-top: 2vw;
-		font-size: 4vw;
+		font-size: 8vw;
 	}
 }
 
@@ -360,6 +361,12 @@ h3 {
 .last-event h3 {
 	color: var(--last-event-text-color);
 	text-shadow: 3px 3px 3px var(--last-event-shadow-color);
+}
+
+@media screen and (max-width: 800px) {
+	.last-event {
+		padding-bottom: 10vw;
+	}
 }
 
 /* INCOMING EVENT */
@@ -393,6 +400,18 @@ h3 {
 	height: auto;
 	border: 2px solid var(--incoming-event-text-color);
 	box-shadow: 3px 3px 3px var(--incoming-event-shadow-color);
+}
+
+@media screen and (max-width: 800px) {
+	.incoming-event {
+		padding-bottom: 10vw;
+	}
+
+	.incoming-event img {
+		max-width: 90vw;
+		width: auto;
+		height: auto;
+	}
 }
 
 /* COMITE */
@@ -608,8 +627,12 @@ button {
 }
 
 @media screen and (max-width: 800px) {
+	.photos {
+		padding-bottom: 0;
+	}
+
 	.photos img {
-		max-height: 70vh;
+		max-height: 100vw;
 		width: auto;
 		height: auto;
 	}
@@ -627,7 +650,7 @@ footer {
 
 @media screen and (max-width: 800px) {
 	footer {
-		padding: 0.5vw 2vw;
+		padding: 0.5vw 4vw;
 		font-size: 3vw;
 	}
 }
