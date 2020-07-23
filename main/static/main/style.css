@@ -517,6 +517,7 @@ h3 {
 		margin-bottom: 5vw;
 		width: 70vw;
 		height: 70vw;
+		border-radius: 70vw;
 		border: 2vw solid var(--comite-bureau-text-color);
 	}
 
@@ -568,6 +569,7 @@ button {
 .account div {
 	margin-top: 3vw;
 	display: flex;
+	width: 100%;
 }
 
 .account img {
@@ -605,6 +607,39 @@ button {
 	text-justify: inter-word;
 }
 
+@media screen and (max-width: 800px) {
+	.account div {
+		display: table;
+		text-align: center;
+		margin: 0;
+	}
+
+	.account h4 {
+		padding-left: 7vw;
+		font-size: 4vw;
+	}
+
+	.account p {
+		font-size: 4vw;
+		padding-left: 7vw;
+		padding-right: 7vw;
+	}
+
+	.account .coord {
+		border: none;
+		text-align: left;
+		padding: 0;
+		margin: 0;
+	}
+
+	.account img {
+		margin: 3vw;
+		width: 50vw;
+		height: 50vw;
+		border-radius: 50vw;
+	}
+}
+
 /* POST */
 
 .post {
@@ -624,6 +659,14 @@ button {
 	text-justify: inter-word;
 	font-size: 1.5vw;
 	font-family: Arial, sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+	.post p {
+		font-size: 4vw;
+		padding-left: 7vw;
+		padding-right: 7vw;
+	}
 }
 
 /* PHOTOS */
