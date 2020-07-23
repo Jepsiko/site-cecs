@@ -13,11 +13,11 @@
         <ul>
             <li class="cecs-name">Cercle des Etudiants du Centre et Sympathisants</li>
             {% if user.is_authenticated %}
-                <li><a href="{% url 'main:logout' %}">Déconnexion</a></li>
-                <li><a href="?">{{ user }}</a></li>
+                <li class="user-links"><a href="?">{{ user }}</a></li>
+                <li class="user-links"><a href="{% url 'main:logout' %}">Déconnexion</a></li>
             {% else %}
-                <li><a href="{% url 'main:login' %}">Connexion</a></li>
-                <li><a href="{% url 'main:register' %}">Inscription</a></li>
+                <li class="user-links"><a href="{% url 'main:register' %}">Inscription</a></li>
+                <li class="user-links"><a href="{% url 'main:login' %}">Connexion</a></li>
             {% endif %}
         </ul>
     </div>
@@ -26,12 +26,12 @@
         <div class="polygon-left">
             <img src="{% static "images/carnaval.jpg" %}" alt="">
         </div>
-        <div class="polygon-right">
-            <img src="{% static "images/drapeau.png" %}" alt="">
-        </div>
         <div class="title">
             <img src="{% static "images/logo-white.png" %}" alt="">
             <h1>LE CECS ULB</h1>
+        </div>
+        <div class="polygon-right">
+            <img src="{% static "images/drapeau.png" %}" alt="">
         </div>
     </header>
 
