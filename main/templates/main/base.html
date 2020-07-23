@@ -3,10 +3,12 @@
 <head>
     {% load static %}
 
-    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
     <meta charset="UTF-8">
     <title>{% block pagename %}CECS ULB{% endblock %}</title>
     <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}"/>
+    <script src="{% static "scripts/jquery-3.5.1.min.js" %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <div class="header-bar">
@@ -36,6 +38,7 @@
     </header>
 
     <div class="navbar">
+        <button class="dropdown_btn"><img src="{% static "images/menu3.png" %}" alt="menu"></button>
         {% block navbar %}
         <ul>
             <li><a href="{% url 'main:index' %}">ACCUEIL</a></li>
