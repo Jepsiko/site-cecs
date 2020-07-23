@@ -294,6 +294,23 @@ header {
 	.navbar ul {
 		display: none;
 	}
+
+	.navbar li a {
+		font-size: 5vw;
+	}
+
+	.dropdown_btn:hover + ul, .navbar ul:hover {
+		position: absolute;
+		top: 15vw;
+		display: table;
+		width: 100%;
+	}
+
+	.dropdown_btn:hover + ul li, .navbar ul:hover li {
+		display: block;
+		width: 100%;
+		background-color: whitesmoke;
+	}
 }
 
 /* CONTENT */

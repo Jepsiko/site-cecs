@@ -40,15 +40,15 @@
     <div class="navbar">
         <button class="dropdown_btn"><img src="{% static "images/menu5.png" %}" alt="menu"></button>
         {% block navbar %}
-        <ul>
-            <li><a href="{% url 'main:index' %}">ACCUEIL</a></li>
-            <li><a href="{% url 'main:comite' %}">COMITE</a></li>
-            <li><a href="?">EVENEMENTS</a></li>
-            <li><a href="{% url 'main:photo' %}">PHOTOS</a></li>
-            <li><a href="?">CHANTS</a></li>
-            <li><a href="?">JOURNAUX</a></li>
-            <li><a href="?">ARCHIVES</a></li>
-        </ul>
+            <ul>
+                <li><a href="{% url 'main:index' %}">ACCUEIL</a></li>
+                <li><a href="{% url 'main:comite' %}">COMITE</a></li>
+                <li><a href="?">EVENEMENTS</a></li>
+                <li><a href="{% url 'main:photo' %}">PHOTOS</a></li>
+                <li><a href="?">CHANTS</a></li>
+                <li><a href="?">JOURNAUX</a></li>
+                <li><a href="?">ARCHIVES</a></li>
+            </ul>
         {% endblock %}
     </div>
 
