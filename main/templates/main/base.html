@@ -38,9 +38,18 @@
     </header>
 
     <div class="navbar">
-        <button class="dropdown_btn"><img src="{% static "images/menu5.png" %}" alt="menu"></button>
+        <img src="{% static "images/logo-blue.png" %}" alt="">
+        <h1>LE CECS ULB</h1>
+        <button class="dropdown_btn"><img src="{% static "images/menu6.png" %}" alt="menu"></button>
         {% block navbar %}
             <ul>
+                {% if user.is_authenticated %}
+                    <li class="user-links-navbar"><a href="?">{{ user }}</a></li>
+                    <li class="user-links-navbar"><a href="{% url 'main:logout' %}">Déconnexion</a></li>
+                {% else %}
+                    <li class="user-links-navbar"><a href="{% url 'main:register' %}">Inscription</a></li>
+                    <li class="user-links-navbar"><a href="{% url 'main:login' %}">Connexion</a></li>
+                {% endif %}
                 <li><a href="{% url 'main:index' %}">ACCUEIL</a></li>
                 <li><a href="{% url 'main:comite' %}">COMITE</a></li>
                 <li><a href="?">EVENEMENTS</a></li>
