@@ -1,20 +1,10 @@
 
-{% extends "main/base.html" %}
+{% extends "main/comite.html" %}
 {% load static %}
 
 {% block pagename %}{{ block.super }} - {{ post.name }}{% endblock %}
 
-{% block navbar %}
-    <ul>
-        <li><a href="{% url 'main:index' %}">ACCUEIL</a></li>
-        <li><a href="{% url 'main:comite' %}" class="active">COMITE</a></li>
-        <li><a href="?">EVENEMENTS</a></li>
-        <li><a href="{% url 'main:photo' %}">PHOTOS</a></li>
-        <li><a href="?">CHANTS</a></li>
-        <li><a href="?">JOURNAUX</a></li>
-        <li><a href="?">ARCHIVES</a></li>
-    </ul>
-{% endblock %}
+{% block navbar %}{{ block.super }}{% endblock %}
 
 {% block content %}
     <div class="post">
