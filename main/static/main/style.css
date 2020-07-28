@@ -498,7 +498,6 @@ h3 {
 	width: 10vw;
 	height: 10vw;
 	border-radius: 10vw;
-	border: 0.2vw solid var(--comite-text-color);
 	margin-top: 2vw;
 }
 
@@ -539,7 +538,7 @@ h3 {
 }
 
 .comite-bureau img {
-	border: 0.2vw solid var(--comite-bureau-text-color) !important;
+	border: 0.2vw solid var(--comite-bureau-text-color);
 }
 
 @media screen and (max-width: 800px) {
