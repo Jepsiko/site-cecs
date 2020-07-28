@@ -509,6 +509,7 @@ h3 {
 	font-size: 2vw;
 	text-decoration: none;
 	text-align: center;
+	color: var(--comite-text-color);
 }
 
 .post-name:hover {
@@ -520,8 +521,9 @@ h3 {
 	margin-bottom: 0.5vw;
 	display: inline-block;
 	font-family: "Roboto-Light", sans-serif;
-	font-size: 1vw;
+	font-size: 1.2vw;
 	text-decoration: none;
+	color: var(--comite-text-color);
 }
 
 .user:hover {
