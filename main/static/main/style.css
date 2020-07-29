@@ -547,8 +547,9 @@ h3 {
 		width: 100%;
 	}
 
-	.comite-grid img:before {
+	.comite-grid div {
 		padding-top: 10vw;
+		padding-bottom: 5vw;
 	}
 
 	.comite-grid img {
@@ -562,7 +563,6 @@ h3 {
 
 	.post-name {
 		font-size: 10vw;
-		padding-bottom: 5vw;
 	}
 
 	.user {
