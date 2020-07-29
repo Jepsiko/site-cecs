@@ -547,6 +547,10 @@ h3 {
 		width: 100%;
 	}
 
+	.comite-grid img:before {
+		padding-top: 10vw;
+	}
+
 	.comite-grid img {
 		margin-top: 0;
 		margin-bottom: 5vw;
@@ -556,13 +560,9 @@ h3 {
 		border: 2vw solid var(--comite-bureau-text-color);
 	}
 
-	.comite-bureau {
-		padding-top: 10vw;
-		padding-bottom: 5vw;
-	}
-
 	.post-name {
 		font-size: 10vw;
+		padding-bottom: 5vw;
 	}
 
 	.user {
