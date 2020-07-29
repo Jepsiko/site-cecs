@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from .models import Album, Photo, Account, Post
+from .models import Album, Photo, Account, Post, Event
 
 
 class AccountAdmin(UserAdmin):
@@ -57,3 +57,5 @@ class PostAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Post, PostAdmin)
+
+admin.site.register(Event)

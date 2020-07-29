@@ -4,7 +4,7 @@ from django.core.validators import RegexValidator
 
 
 class Album(models.Model):
-	name = models.CharField(max_length=200)
+	name = models.CharField(max_length=30)
 	pub_date = models.DateField()
 
 	def __str__(self):
@@ -20,6 +20,14 @@ class Photo(models.Model):
 
 	def __str__(self):
 		return self.image.name
+
+
+class Event(models.Model):
+	name = models.CharField(max_length=30)
+	pub_date = models.DateField(blank=True)
+	affiche = models.ImageField(upload_to='affiches')
+	description = models.TextField(blank=True)
+	facebook_link = models.URLField(max_length=200)
 
 
 class MyAccountManager(BaseUserManager):
