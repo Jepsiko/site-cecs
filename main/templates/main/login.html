@@ -6,7 +6,7 @@
 {% block navbar %}
     <ul>
         {% if user.is_authenticated %}
-            <li class="user-links-navbar"><a href="?">{{ user }}</a></li>
+            <li class="user-links-navbar"><a href="{% url 'main:profile' %}">{{ user }}</a></li>
             <li class="user-links-navbar"><a href="{% url 'main:logout' %}">Déconnexion</a></li>
         {% else %}
             <li class="user-links-navbar"><a href="{% url 'main:register' %}">Inscription</a></li>

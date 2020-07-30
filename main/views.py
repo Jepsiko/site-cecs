@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 
 from .models import Album, Account, Post, Event
-from .forms import RegistrationForm, AccountAuthentificationForm
+from .forms import RegistrationForm, AccountAuthentificationForm, AccountUpdateForm
 
 
 class IndexView(generic.TemplateView):
@@ -113,3 +113,27 @@ def login_view(request):
 
 	context['login_form'] = form
 	return render(request, 'main/login.html', context)
+
+
+def profile_view(request):
+	if not request.user.is_authenticated:
+		return redirect('main:login')
+
+	context = {}
+
+	if request.POST:
+		form = AccountUpdateForm(request.POST, instance=request.user)
+		if form.is_valid():
+			form.save()
+	else:
+		account = Account.objects.filter(username=request.user.username)[0]
+		form = AccountUpdateForm(initial={
+			'photo': account.photo,
+			'description': account.description,
+			'display_email': account.display_email,
+			'phone_number': account.phone_number,
+			'display_phone_number': account.display_phone_number,
+		})
+
+	context['profile_form'] = form
+	return render(request, 'main/profile.html', context)

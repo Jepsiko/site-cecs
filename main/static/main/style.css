@@ -785,6 +785,17 @@ a:hover {
 	width: 70vw;
 }
 
+/* PROFILE */
+
+.profile-form {
+	text-align: left;
+}
+
+.profile-form button {
+	margin-left: 5vw;
+	margin-bottom: 5vw;
+}
+
 /* PHOTOS */
 
 .photos {
