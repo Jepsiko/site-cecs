@@ -28,7 +28,7 @@
 
     {% if user.is_authenticated %}
         <h2>{{ user }}</h2>
-        <form method="post" class="register-form">
+        <form enctype="multipart/form-data" method="post" class="register-form">
             {% csrf_token %}
 
             {% for field in profile_form %}
