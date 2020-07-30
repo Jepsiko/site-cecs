@@ -122,7 +122,7 @@ def profile_view(request):
 	context = {}
 
 	if request.POST:
-		form = AccountUpdateForm(request.POST, instance=request.user)
+		form = AccountUpdateForm(request.POST, request.FILES, instance=request.user)
 		if form.is_valid():
 			form.save()
 	else:
