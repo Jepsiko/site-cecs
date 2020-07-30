@@ -590,6 +590,7 @@ a:hover {
 
 .register-form {
 	margin-top: 4vw;
+	text-align: left;
 }
 
 .register-text {
@@ -783,17 +784,6 @@ a:hover {
 
 .event img {
 	width: 70vw;
-}
-
-/* PROFILE */
-
-.profile-form {
-	text-align: left;
-}
-
-.profile-form button {
-	margin-left: 5vw;
-	margin-bottom: 5vw;
 }
 
 /* PHOTOS */
