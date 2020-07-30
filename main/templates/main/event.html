@@ -1,0 +1,38 @@
+
+{% extends "main/base.html" %}
+{% load static %}
+
+{% if event %}
+    {% block pagename %}{{ block.super }} - {{ event.name }}{% endblock %}
+{% endif %}
+
+{% block navbar %}
+    <ul>
+        {% if user.is_authenticated %}
+            <li class="user-links-navbar"><a href="?">{{ user }}</a></li>
+            <li class="user-links-navbar"><a href="{% url 'main:logout' %}">Déconnexion</a></li>
+        {% else %}
+            <li class="user-links-navbar"><a href="{% url 'main:register' %}">Inscription</a></li>
+            <li class="user-links-navbar"><a href="{% url 'main:login' %}">Connexion</a></li>
+        {% endif %}
+        <li><a href="{% url 'main:index' %}">ACCUEIL</a></li>
+        <li><a href="{% url 'main:comite' %}">COMITE</a></li>
+        <li><a href="?" class="active">EVENEMENTS</a></li>
+        <li><a href="{% url 'main:photo' %}">PHOTOS</a></li>
+        <li><a href="?">CHANTS</a></li>
+        <li><a href="?">JOURNAUX</a></li>
+        <li><a href="?">ARCHIVES</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <div class="event">
+        {% if event %}
+            <h2>{{ event.name }}</h2>
+            <h3>{{ event.pub_date|date:'d/m/Y'}}</h3>
+            <img src="{{ event.affiche.url }}" alt="">
+            <a href="{{ event.facebook_link }}"><p>Lien Facebook</p></a>
+            <p>{{ event.description|linebreaks }}</p>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -2,7 +2,9 @@
 {% extends "main/comite.html" %}
 {% load static %}
 
-{% block pagename %}{{ block.super }} - {{ post.name }}{% endblock %}
+{% if post %}
+    {% block pagename %}{{ block.super }} - {{ post.name }}{% endblock %}
+{% endif %}
 
 {% block navbar %}{{ block.super }}{% endblock %}
 

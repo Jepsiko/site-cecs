@@ -24,10 +24,10 @@ class Photo(models.Model):
 
 class Event(models.Model):
 	name = models.CharField(max_length=30)
-	pub_date = models.DateField(blank=True)
 	affiche = models.ImageField(upload_to='affiches')
-	description = models.TextField(blank=True)
 	facebook_link = models.URLField(max_length=200)
+	pub_date = models.DateField(blank=True)
+	description = models.TextField(blank=True)
 
 
 class MyAccountManager(BaseUserManager):

@@ -2,16 +2,18 @@ from django.views import generic
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 
-from .models import Album, Account, Post
+from .models import Album, Account, Post, Event
 from .forms import RegistrationForm, AccountAuthentificationForm
 
 
-class IndexView(generic.ListView):
+class IndexView(generic.TemplateView):
 	template_name = 'main/index.html'
-	context_object_name = 'latest_album'
 
-	def get_queryset(self):
-		return Album.objects.order_by('pub_date').last()
+	def get_context_data(self, **kwargs):
+		context = super(IndexView, self).get_context_data(**kwargs)
+		context['latest_album'] = Album.objects.order_by('pub_date').last()
+		context['incoming_event'] = Event.objects.order_by('pub_date').last()
+		return context
 
 
 class ComiteView(generic.ListView):
@@ -54,6 +56,14 @@ class PostView(generic.DetailView):
 
 	def get_queryset(self):
 		return Post.objects.all()
+
+
+class EventView(generic.DetailView):
+	model = Event
+	template_name = 'main/event.html'
+
+	def get_queryset(self):
+		return Event.objects.all()
 
 
 def registration_view(request):

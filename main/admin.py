@@ -51,11 +51,18 @@ admin.site.register(Album, AlbumAdmin)
 
 
 class PostAdmin(admin.ModelAdmin):
-	list_display = ('name', 'order', 'description')
+	list_display = ('name', 'order')
 	search_fields = ('name',)
 	ordering = ('order',)
 
 
 admin.site.register(Post, PostAdmin)
 
-admin.site.register(Event)
+
+class EventAdmin(admin.ModelAdmin):
+	list_display = ('name', 'pub_date')
+	search_fields = ('name',)
+	ordering = ('pub_date',)
+
+
+admin.site.register(Event, EventAdmin)

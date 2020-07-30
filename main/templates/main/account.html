@@ -2,7 +2,9 @@
 {% extends "main/comite.html" %}
 {% load static %}
 
-{% block pagename %}{{ block.super }} - {{ account.first_name }} {{ account.last_name }}{% endblock %}
+{% if account %}
+    {% block pagename %}{{ block.super }} - {{ account.first_name }} {{ account.last_name }}{% endblock %}
+{% endif %}
 
 {% block navbar %}{{ block.super }}{% endblock %}
 
