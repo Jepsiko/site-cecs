@@ -23,6 +23,10 @@
 	--comite-bureau-text-color: whitesmoke;
 	--comite-bureau-bg-color: dodgerblue;
 	--comite-bureau-shadow-color: royalblue;
+
+	--album-text-color: dodgerblue;
+	--album-bg-color: whitesmoke;
+	--album-shadow-color: lightgrey;
 }
 
 /* CUSTOM FONTS */
@@ -762,11 +766,13 @@ a:hover {
 /* CHANTS */
 
 .chants {
+	box-shadow: inset 0 10px 10px var(--comite-shadow-color);
 	padding-left: 20vw;
 	padding-right: 20vw;
 	text-align: left;
 	font-family: 'Open Sans', sans-serif;
 	margin-bottom: 5vw;
+	padding-top: 1vw;
 }
 
 .chants h4 {
@@ -782,6 +788,10 @@ a:hover {
 
 .event {
 	box-shadow: inset 0 10px 10px var(--comite-shadow-color);
+	padding-left: 15vw;
+	padding-right: 15vw;
+	text-align: left;
+	font-family: 'Open Sans', sans-serif;
 	margin-bottom: 5vw;
 }
 
@@ -792,23 +802,54 @@ a:hover {
 
 .event a {
 	color: royalblue;
+	display: inline-block;
 }
 
 .event a p {
 	font-size: 1vw;
+	font-weight: bold;
 }
 
 .event p {
-	margin-left: 15vw;
-	margin-right: 15vw;
-	text-align: justify;
-	text-justify: inter-word;
-	font-size: 1.5vw;
-	font-family: Arial, sans-serif;
+	font-size: 1vw;
 }
 
 .event img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 	width: 70vw;
+}
+
+/* EVENTS */
+
+.events {
+	background-color: var(--album-bg-color);
+	box-shadow: inset 0 10px 10px var(--album-shadow-color);
+}
+
+.events a {
+	display: inline-block;
+}
+
+.events a:hover {
+	text-decoration: underline;
+	color: var(--album-text-color);
+}
+
+.events h2 {
+	color: var(--album-text-color);
+	text-shadow: 3px 3px 3px var(--album-shadow-color);
+}
+
+.events h2::after {
+	border: 2px solid var(--album-text-color);
+	box-shadow: 3px 3px 3px var(--album-shadow-color);
+}
+
+.events h3 {
+	color: var(--album-text-color);
+	text-shadow: 3px 3px 3px var(--album-shadow-color);
 }
 
 /* PHOTOS */
@@ -825,7 +866,23 @@ a:hover {
 }
 
 .album {
-	box-shadow: inset 0 10px 10px var(--last-event-shadow-color);
+	background-color: var(--album-bg-color);
+	box-shadow: inset 0 10px 10px var(--album-shadow-color);
+}
+
+.album h2 {
+	color: var(--album-text-color);
+	text-shadow: 3px 3px 3px var(--album-shadow-color);
+}
+
+.album h2::after {
+	border: 2px solid var(--album-text-color);
+	box-shadow: 3px 3px 3px var(--album-shadow-color);
+}
+
+.album h3 {
+	color: var(--album-text-color);
+	text-shadow: 3px 3px 3px var(--album-shadow-color);
 }
 
 @media screen and (max-width: 800px) {

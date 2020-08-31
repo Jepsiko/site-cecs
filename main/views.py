@@ -50,6 +50,14 @@ class ChantView(generic.ListView):
 		return Chant.objects.all().order_by('order')
 
 
+class EventsView(generic.ListView):
+	template_name = 'main/events.html'
+	context_object_name = 'events'
+
+	def get_queryset(self):
+		return Event.objects.all().order_by('-pub_date')
+
+
 class AccountView(generic.DetailView):
 	model = Account
 	template_name = 'main/account.html'

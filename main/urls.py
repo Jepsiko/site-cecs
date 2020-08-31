@@ -14,4 +14,5 @@ urlpatterns = [
 	path('profile/', views.profile_view, name='profile'),
 	path('photo/', views.PhotoView.as_view(), name='photo'),
 	path('chants/', views.ChantView.as_view(), name='chants'),
+	path('events/', views.EventsView.as_view(), name='events'),
 ]

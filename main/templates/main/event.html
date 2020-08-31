@@ -1,29 +1,10 @@
 
-{% extends "main/base.html" %}
+{% extends "main/events.html" %}
 {% load static %}
 
 {% if event %}
     {% block pagename %}{{ block.super }} - {{ event.name }}{% endblock %}
 {% endif %}
-
-{% block navbar %}
-    <ul>
-        {% if user.is_authenticated %}
-            <li class="user-links-navbar"><a href="{% url 'main:profile' %}">{{ user }}</a></li>
-            <li class="user-links-navbar"><a href="{% url 'main:logout' %}">Déconnexion</a></li>
-        {% else %}
-            <li class="user-links-navbar"><a href="{% url 'main:register' %}">Inscription</a></li>
-            <li class="user-links-navbar"><a href="{% url 'main:login' %}">Connexion</a></li>
-        {% endif %}
-        <li><a href="{% url 'main:index' %}">ACCUEIL</a></li>
-        <li><a href="{% url 'main:comite' %}">COMITÉ</a></li>
-        <li><a href="?" class="active">ÉVÈNEMENTS</a></li>
-        <li><a href="{% url 'main:photo' %}">PHOTOS</a></li>
-        <li><a href="{% url 'main:chants' %}">CHANTS</a></li>
-        <li><a href="?">JOURNAUX</a></li>
-        <li><a href="?">ARCHIVES</a></li>
-    </ul>
-{% endblock %}
 
 {% block content %}
     <div class="event">

@@ -15,7 +15,7 @@
         {% endif %}
         <li><a href="{% url 'main:index' %}">ACCUEIL</a></li>
         <li><a href="{% url 'main:comite' %}">COMITÉ</a></li>
-        <li><a href="?">ÉVÈNEMENTS</a></li>
+        <li><a href="{% url 'main:events' %}">ÉVÈNEMENTS</a></li>
         <li><a href="{% url 'main:photo' %}" class="active">PHOTOS</a></li>
         <li><a href="{% url 'main:chants' %}">CHANTS</a></li>
         <li><a href="?">JOURNAUX</a></li>
