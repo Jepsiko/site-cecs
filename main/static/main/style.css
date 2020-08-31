@@ -428,6 +428,11 @@ a:hover {
 	text-shadow: 3px 3px 3px var(--last-event-shadow-color);
 }
 
+.last-event a {
+	color: var(--last-event-text-color);
+	display: inline-block;
+}
+
 @media screen and (max-width: 800px) {
 	.last-event {
 		padding-bottom: 10vw;
@@ -859,6 +864,11 @@ a:hover {
 	max-width: 80vw;
 	display: block;
 	margin: 2vw auto;
+}
+
+.album a {
+	color: var(--album-text-color);
+	display: inline-block;
 }
 
 /* PHOTOS */
