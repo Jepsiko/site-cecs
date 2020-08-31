@@ -852,6 +852,15 @@ a:hover {
 	text-shadow: 3px 3px 3px var(--album-shadow-color);
 }
 
+/* ALBUM */
+
+.album img {
+	max-height: 38vw;
+	max-width: 80vw;
+	display: block;
+	margin: 2vw auto;
+}
+
 /* PHOTOS */
 
 .photos {

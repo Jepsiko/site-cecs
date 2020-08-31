@@ -82,6 +82,14 @@ class EventView(generic.DetailView):
 		return Event.objects.all()
 
 
+class AlbumView(generic.DetailView):
+	model = Album
+	template_name = 'main/album.html'
+
+	def get_queryset(self):
+		return Album.objects.all()
+
+
 def registration_view(request):
 	context = {}
 	if request.POST:
