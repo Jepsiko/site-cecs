@@ -5,6 +5,9 @@
 	--title-text-color: white;
 	--title-bg-color: deepskyblue;
 
+	--header-text-color: white;
+	--header-bg-color: midnightblue;
+
 	--last-event-text-color: dodgerblue;
 	--last-event-bg-color: whitesmoke;
 	--last-event-shadow-color: lightgrey;
@@ -91,7 +94,7 @@
 }
 
 .header-bar ul {
-	background-color: midnightblue;
+	background-color: var(--header-bg-color);
 	display: flex;
 	align-items: center;
 	list-style-type: none;
@@ -112,7 +115,7 @@
 	text-align: center;
 	font-family: "Roboto-Light", sans-serif;
 	font-size: 1vw;
-	color: white;
+	color: var(--header-text-color);
 }
 
 .user-links-navbar {
@@ -126,7 +129,7 @@
 	text-align: center;
 	font-family: "Roboto-Light", sans-serif;
 	font-size: 1vw;
-	color: white;
+	color: var(--header-text-color);
 }
 
 @media screen and (max-width: 800px) {
@@ -668,25 +671,28 @@ a:hover {
 	padding-left: 2vw;
 	border-left: 3px solid black;
 	font-size: 2vw;
-	font-family: "Roboto-Light", sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	margin-bottom: 2vw;
 }
 
 .account .coord h4 {
-	font-family: "Roboto-Regular", sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	font-size: 1.7vw;
 }
 
 .account h4 {
 	padding-left: 5vw;
-	font-size: 1.5vw;
-	font-family: "Roboto-Regular", sans-serif;
+	font-size: 1.7vw;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
 }
 
 .account p {
 	padding-left: 5vw;
 	padding-right: 5vw;
 	font-size: 1.5vw;
-	font-family: "Roboto-Light", sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	text-align: justify;
 	text-justify: inter-word;
 }
@@ -737,12 +743,12 @@ a:hover {
 }
 
 .post p {
-	padding-left: 5vw;
-	padding-right: 5vw;
+	padding-left: 15vw;
+	padding-right: 15vw;
 	text-align: justify;
 	text-justify: inter-word;
-	font-size: 1.5vw;
-	font-family: Arial, sans-serif;
+	font-size: 1.3vw;
+	font-family: 'Open Sans', sans-serif;
 }
 
 @media screen and (max-width: 800px) {
@@ -751,6 +757,25 @@ a:hover {
 		padding-left: 7vw;
 		padding-right: 7vw;
 	}
+}
+
+/* CHANTS */
+
+.chants {
+	padding-left: 20vw;
+	padding-right: 20vw;
+	text-align: left;
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 5vw;
+}
+
+.chants h4 {
+	font-size: 1.2vw;
+	font-weight: bold;
+}
+
+.chants p {
+	font-size: 1vw;
 }
 
 /* EVENT */
@@ -818,8 +843,8 @@ a:hover {
 /* FOOTER */
 
 footer {
-	background-color: midnightblue;
-	color: white;
+	background-color: var(--header-bg-color);
+	color: var(--header-text-color);
 	padding: 0.5vw 2vw;
 	font-size: 1vw;
 	font-family: "Roboto-Light", sans-serif;

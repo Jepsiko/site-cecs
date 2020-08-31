@@ -14,10 +14,10 @@
             <li class="user-links-navbar"><a href="{% url 'main:login' %}">Connexion</a></li>
         {% endif %}
         <li><a href="{% url 'main:index' %}">ACCUEIL</a></li>
-        <li><a href="{% url 'main:comite' %}" class="active">COMITE</a></li>
-        <li><a href="?">EVENEMENTS</a></li>
+        <li><a href="{% url 'main:comite' %}" class="active">COMITÉ</a></li>
+        <li><a href="?">ÉVÈNEMENTS</a></li>
         <li><a href="{% url 'main:photo' %}">PHOTOS</a></li>
-        <li><a href="?">CHANTS</a></li>
+        <li><a href="{% url 'main:chants' %}">CHANTS</a></li>
         <li><a href="?">JOURNAUX</a></li>
         <li><a href="?">ARCHIVES</a></li>
     </ul>

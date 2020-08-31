@@ -80,6 +80,15 @@ class Post(models.Model):
 		return self.name
 
 
+class Chant(models.Model):
+	name = models.CharField(max_length=30, unique=True)
+	order = models.IntegerField(default=0)
+	lyrics = models.TextField()
+
+	def __str__(self):
+		return self.name
+
+
 class Account(AbstractBaseUser):
 	username = models.CharField(max_length=30, unique=True)
 	email = models.EmailField(verbose_name='email', max_length=60, unique=True)
