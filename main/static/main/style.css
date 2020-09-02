@@ -794,6 +794,27 @@ a:hover {
 	font-size: 1vw;
 }
 
+@media screen and (max-width: 800px) {
+	.chants {
+		box-shadow: inset 0 10px 10px var(--comite-shadow-color);
+		padding-left: 5vw;
+		padding-right: 5vw;
+		text-align: left;
+		font-family: 'Open Sans', sans-serif;
+		margin-bottom: 5vw;
+		padding-top: 1vw;
+	}
+
+	.chants h4 {
+		font-size: 3.5vw;
+		font-weight: bold;
+	}
+
+	.chants p {
+		font-size: 3vw;
+	}
+}
+
 /* EVENT */
 
 .event {
