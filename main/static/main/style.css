@@ -942,6 +942,15 @@ a:hover {
 	margin: 1vw auto;
 }
 
+@media screen and (max-width: 800px) {
+	.affiche img {
+		width: 100%;
+		max-width: none;
+		max-height: none;
+		margin: 0;
+	}
+}
+
 /* FOOTER */
 
 footer {
