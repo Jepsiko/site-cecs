@@ -29,7 +29,7 @@
             <div class="events">
                 <a href="{% url 'main:event' event.id %}"><h2>{{ event.name }}</h2></a>
                 <h3>{{ event.pub_date|date:'d/m/Y'}}</h3>
-                <div class="photos">
+                <div class="affiche">
                     <img src="{{ event.affiche.url }}" alt="">
                 </div>
             </div>

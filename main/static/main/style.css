@@ -358,7 +358,7 @@ body {
 h2 {
 	margin: 0;
 	position: relative;
-	padding-top: 3vw;
+	padding-top: 2vw;
 	text-align: center;
 	font-family: "LEMONMILK-Regular", sans-serif;
 	font-size: 3vw;
@@ -393,16 +393,18 @@ a:hover {
 
 @media screen and (max-width: 800px) {
 	h2 {
-		font-size: 8vw;
-		padding-top: 7vw;
+		font-size: 7vw;
+		padding-top: 5vw;
 	}
 
 	h2:after {
-		top: 125%;
+		top: 100%;
 	}
 
 	h3 {
-		font-size: 8vw;
+		font-size: 6vw;
+		margin-top: 1vw;
+		margin-bottom: 2vw;
 	}
 }
 
@@ -471,8 +473,9 @@ a:hover {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 50%;
 	height: auto;
+	width: auto;
+	max-height: 25vw;
 	border: 2px solid var(--incoming-event-text-color);
 	box-shadow: 3px 3px 3px var(--incoming-event-shadow-color);
 }
@@ -483,9 +486,11 @@ a:hover {
 	}
 
 	.incoming-event img {
-		max-width: 90vw;
-		width: auto;
+		max-height: none;
+		width: 100%;
 		height: auto;
+		border-left: none;
+		border-right: none;
 	}
 }
 
@@ -857,32 +862,14 @@ a:hover {
 	text-shadow: 3px 3px 3px var(--album-shadow-color);
 }
 
+@media screen and (max-width: 800px) {
+	.events .photos img {
+		width: 100%;
+		display: block;
+	}
+}
+
 /* ALBUM */
-
-.album img {
-	max-height: 38vw;
-	max-width: 80vw;
-	display: block;
-	margin: 2vw auto;
-}
-
-.album a {
-	color: var(--album-text-color);
-	display: inline-block;
-}
-
-/* PHOTOS */
-
-.photos {
-	overflow: auto;
-	white-space: nowrap;
-	padding-bottom: 3vw;
-}
-
-.photos img {
-	height: 25vw;
-	display: inline-block;
-}
 
 .album {
 	background-color: var(--album-bg-color);
@@ -904,16 +891,55 @@ a:hover {
 	text-shadow: 3px 3px 3px var(--album-shadow-color);
 }
 
+.album a {
+	color: var(--album-text-color);
+	display: inline-block;
+}
+
+.album img {
+	max-height: 38vw;
+	max-width: 80vw;
+	display: block;
+	margin: 2vw auto;
+}
+
+@media screen and (max-width: 800px) {
+	.album img {
+		max-width: none;
+	}
+}
+
+/* PHOTOS */
+
+.photos {
+	overflow: auto;
+	white-space: nowrap;
+}
+
+.photos img {
+	height: 25vw;
+	display: inline-block;
+}
+
 @media screen and (max-width: 800px) {
 	.photos {
 		padding-bottom: 0;
 	}
 
 	.photos img {
-		max-height: 100vw;
+		max-height: 60vw;
 		width: auto;
 		height: auto;
 	}
+}
+
+/* AFFICHES */
+
+.affiche img {
+	max-height: 30vw;
+	max-width: 50vw;
+	display: block;
+	margin: 1vw auto;
 }
 
 /* FOOTER */
