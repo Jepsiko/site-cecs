@@ -11,7 +11,7 @@
             <li class="user-links-navbar"><a href="{% url 'main:logout' %}">Déconnexion</a></li>
         {% else %}
             <li class="user-links-navbar"><a href="{% url 'main:register' %}">Inscription</a></li>
-            <li class="user-links-navbar"><a href="{% url 'main:login' %}" class="active">Connexion</a></li>
+            <li class="user-links-navbar"><a href="{% url 'main:login' %}">Connexion</a></li>
         {% endif %}
         <li><a href="{% url 'main:index' %}">ACCUEIL</a></li>
         <li><a href="{% url 'main:comite' %}">COMITÉ</a></li>
