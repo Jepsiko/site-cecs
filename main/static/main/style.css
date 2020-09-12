@@ -984,6 +984,33 @@ a:hover {
 	}
 }
 
+/* JOURNAL */
+
+.journal {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 2vw auto;
+	padding: 2vw;
+	background-color: dodgerblue;
+	border-radius: 2vw;
+	box-shadow: 3px 3px 3px grey;
+	width: 50vw;
+}
+
+.journal p {
+	color: whitesmoke;
+	font-size: 1.3vw;
+	font-family: 'Open Sans', sans-serif;
+	text-shadow: 3px 3px 3px var(--incoming-event-shadow-color);
+}
+
+.journal img {
+	width: 2vw;
+	height: 2vw;
+	filter: drop-shadow(3px 3px 3px var(--incoming-event-shadow-color));
+}
+
 /* FOOTER */
 
 footer {

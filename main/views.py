@@ -1,8 +1,9 @@
 from django.views import generic
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
+from django.utils import timezone
 
-from .models import Album, Account, Post, Event, Chant
+from .models import Album, Account, Post, Event, Chant, Journal
 from .forms import RegistrationForm, AccountAuthentificationForm, AccountUpdateForm
 
 
@@ -40,6 +41,14 @@ class PhotoView(generic.ListView):
 
 	def get_queryset(self):
 		return Album.objects.all().order_by('-pub_date')
+
+
+class JournalView(generic.ListView):
+	template_name = 'main/journal.html'
+	context_object_name = 'journals'
+
+	def get_queryset(self):
+		return Journal.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')
 
 
 class ChantView(generic.ListView):

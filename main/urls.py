@@ -16,4 +16,5 @@ urlpatterns = [
 	path('photo/', views.PhotoView.as_view(), name='photo'),
 	path('chants/', views.ChantView.as_view(), name='chants'),
 	path('events/', views.EventsView.as_view(), name='events'),
+	path('journals/', views.JournalView.as_view(), name='journals'),
 ]
