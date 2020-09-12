@@ -409,6 +409,24 @@ a:hover {
 	}
 }
 
+/* PRESENTATION */
+
+.presentation {
+	background-color: var(--last-event-bg-color);
+	box-shadow: inset 0 10px 10px var(--last-event-shadow-color);
+}
+
+.presentation h2 {
+	color: var(--last-event-text-color);
+	text-shadow: 3px 3px 3px var(--last-event-shadow-color);
+}
+
+@media screen and (max-width: 800px) {
+	.presentation {
+		padding-bottom: 10vw;
+	}
+}
+
 /* LAST EVENT */
 
 .last-event {
@@ -999,8 +1017,21 @@ footer img {
 }
 
 @media screen and (max-width: 800px) {
-	footer {
+	footer .contact {
 		padding: 0.5vw 4vw;
+	}
+
+	footer p {
 		font-size: 3vw;
+	}
+
+	footer .social-network {
+		margin-right: 2vw;
+	}
+
+	footer img {
+		width: 5vw;
+		height: 5vw;
+		padding: 2vw;
 	}
 }
