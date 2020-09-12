@@ -22,6 +22,15 @@ class Photo(models.Model):
 		return self.image.name
 
 
+class Journal(models.Model):
+	name = models.CharField(max_length=30)
+	pub_date = models.DateField(blank=True)
+	file = models.FileField(upload_to='journals')
+
+	def __str__(self):
+		return self.name
+
+
 class Event(models.Model):
 	name = models.CharField(max_length=30)
 	affiche = models.ImageField(upload_to='affiches')

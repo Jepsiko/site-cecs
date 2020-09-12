@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from .models import Album, Photo, Account, Post, Event, Chant
+from .models import Album, Photo, Account, Post, Event, Chant, Journal
 
 
 class AccountAdmin(UserAdmin):
@@ -75,3 +75,12 @@ class EventAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Event, EventAdmin)
+
+
+class JournalAdmin(admin.ModelAdmin):
+	list_display = ('name', 'pub_date')
+	search_fields = ('name',)
+	ordering = ('pub_date',)
+
+
+admin.site.register(Journal, JournalAdmin)
