@@ -300,7 +300,8 @@ header {
 	}
 
 	.navbar li a {
-		font-size: 5vw;
+		font-size: 4vw;
+		padding: 0.4em 0.4em;
 	}
 
 	.user-links-navbar {
