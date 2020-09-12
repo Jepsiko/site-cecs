@@ -31,6 +31,15 @@ class Journal(models.Model):
 		return self.name
 
 
+class PV(models.Model):
+	name = models.CharField(max_length=30)
+	pub_date = models.DateField(blank=True)
+	file = models.FileField(upload_to='pv')
+
+	def __str__(self):
+		return self.name
+
+
 class Event(models.Model):
 	name = models.CharField(max_length=30)
 	affiche = models.ImageField(upload_to='affiches')

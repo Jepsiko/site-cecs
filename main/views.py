@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.utils import timezone
 
-from .models import Album, Account, Post, Event, Chant, Journal
+from .models import Album, Account, Post, Event, Chant, Journal, PV
 from .forms import RegistrationForm, AccountAuthentificationForm, AccountUpdateForm
 
 
@@ -49,6 +49,14 @@ class JournalView(generic.ListView):
 
 	def get_queryset(self):
 		return Journal.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')
+
+
+class ArchivesView(generic.ListView):
+	template_name = 'main/archives.html'
+	context_object_name = 'pvs'
+
+	def get_queryset(self):
+		return PV.objects.all().order_by('-pub_date')
 
 
 class ChantView(generic.ListView):

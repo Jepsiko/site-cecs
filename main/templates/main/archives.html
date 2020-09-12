@@ -2,7 +2,7 @@
 {% extends "main/base.html" %}
 {% load static %}
 
-{% block pagename %}{{ block.super }} - Photos{% endblock %}
+{% block pagename %}{{ block.super }} - Journaux{% endblock %}
 
 {% block navbar %}
     <ul>
@@ -16,27 +16,20 @@
         <li><a href="{% url 'main:index' %}">ACCUEIL</a></li>
         <li><a href="{% url 'main:comite' %}">COMITÉ</a></li>
         <li><a href="{% url 'main:events' %}">ÉVÈNEMENTS</a></li>
-        <li><a href="{% url 'main:photo' %}" class="active">PHOTOS</a></li>
+        <li><a href="{% url 'main:photo' %}">PHOTOS</a></li>
         <li><a href="{% url 'main:chants' %}">CHANTS</a></li>
         <li><a href="{% url 'main:journals' %}">JOURNAUX</a></li>
-        <li><a href="{% url 'main:archives' %}">ARCHIVES</a></li>
+        <li><a href="{% url 'main:archives' %}" class="active">ARCHIVES</a></li>
     </ul>
 {% endblock %}
 
 {% block content %}
-    {% if albums %}
-        <div class="albums">
-            {% for album in albums %}
-                <div class="album">
-                    <a href="{% url 'main:album' album.id %}"><h2>{{ album.name }}</h2></a>
-                    <h3>{{ album.pub_date|date:'d/m/Y'}}</h3>
-                    <div class="photos">
-                        {% for photo in album.get_photos %}
-                            <img src="{{ photo.image.url }}" alt="">
-                        {% endfor %}
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
+    {% if pvs %}
+        {% for pv in pvs %}
+            <div class="journal">
+                <p>{{ pv.name }} ({{ pv.pub_date|date:'d/m/Y' }})</p>
+                <a href="{{ pv.file.url }}" download><img src="{% static "images/download-white.png" %}" alt=""></a>
+            </div>
+        {% endfor %}
     {% endif %}
 {% endblock %}
