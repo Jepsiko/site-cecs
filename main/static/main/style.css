@@ -971,10 +971,31 @@ a:hover {
 footer {
 	background-color: var(--header-bg-color);
 	color: var(--header-text-color);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+footer .contact {
+	float: left;
 	padding: 0.5vw 2vw;
+}
+
+footer p {
 	font-size: 1vw;
 	font-family: "Roboto-Light", sans-serif;
 	text-align: left;
+}
+
+footer .social-network {
+	float: right;
+	margin-right: 1vw;
+}
+
+footer img {
+	width: 2vw;
+	height: 2vw;
+	padding: 1vw;
 }
 
 @media screen and (max-width: 800px) {
