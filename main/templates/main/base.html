@@ -13,6 +13,8 @@
 <body>
     <div class="header-bar">
         <ul>
+            <li class="social-links"><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/CECSULB/"><img src="{% static "images/facebook-white.png" %}" alt=""></a></li>
+            <li class="social-links"><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/cecs_ulb/"><img src="{% static "images/instagram-white.png" %}" alt=""></a></li>
             <li class="cecs-name">Cercle des Etudiants du Centre et Sympathisants</li>
             {% if user.is_authenticated %}
                 <li class="user-links"><a href="{% url 'main:profile' %}">{{ user }}</a></li>
@@ -69,10 +71,6 @@
         <div class="contact">
             <p>Contact : cecs.ulb@gmail.com</p>
             <p>Site créé par Arthur Pierrot</p>
-        </div>
-        <div class="social-network">
-            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/CECSULB/"><img src="{% static "images/facebook-white.png" %}" alt=""></a>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/cecs_ulb/"><img src="{% static "images/instagram-white.png" %}" alt=""></a>
         </div>
     </footer>
 </body>

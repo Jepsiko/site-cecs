@@ -126,6 +126,12 @@
 	display: none;
 }
 
+.social-links img {
+	width: 1vw;
+	height: 1vw;
+	padding-left: 1vw;
+}
+
 .cecs-name {
 	margin-right: auto;
 	padding: 10px 15px;
@@ -430,6 +436,22 @@ a:hover {
 .presentation img {
 	width: 20vw;
 	height: 20vw;
+}
+
+.presentation .social-network {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+}
+
+.presentation .social-network p {
+	width: auto;
+	text-align: center;
+}
+
+.social-network-image img {
+	width: 5vw;
+	height: 5vw;
 }
 
 .presentation p {
@@ -1123,17 +1145,6 @@ footer p {
 	text-align: left;
 }
 
-footer .social-network {
-	float: right;
-	margin-right: 1vw;
-}
-
-footer img {
-	width: 2vw;
-	height: 2vw;
-	padding: 1vw;
-}
-
 @media screen and (max-width: 800px) {
 	footer .contact {
 		padding: 0.5vw 4vw;
@@ -1141,15 +1152,5 @@ footer img {
 
 	footer p {
 		font-size: 3vw;
-	}
-
-	footer .social-network {
-		margin-right: 2vw;
-	}
-
-	footer img {
-		width: 5vw;
-		height: 5vw;
-		padding: 2vw;
 	}
 }
