@@ -45,7 +45,7 @@ class Event(models.Model):
 	affiche = models.ImageField(upload_to='affiches', blank=True)
 	facebook_link = models.URLField(max_length=200, blank=True)
 	pub_date = models.DateField(blank=True)
-	end_date = models.DateField(null=True)
+	end_date = models.DateField(null=True, blank=True)
 	description = models.TextField(blank=True)
 
 
