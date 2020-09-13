@@ -28,7 +28,9 @@
         {% for pv in pvs %}
             <div class="journal">
                 <p>{{ pv.name }} ({{ pv.pub_date|date:'d/m/Y' }})</p>
-                <a href="{{ pv.file.url }}" download><img src="{% static "images/download-white.png" %}" alt=""></a>
+                {% if user.is_member %}
+                    <a href="{{ pv.file.url }}" download><img src="{% static "images/download-white.png" %}" alt=""></a>
+                {% endif %}
             </div>
         {% endfor %}
     {% endif %}
