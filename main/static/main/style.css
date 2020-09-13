@@ -359,7 +359,7 @@ body {
 h2 {
 	margin: 0;
 	position: relative;
-	padding-top: 2vw;
+	padding-top: 4vw;
 	text-align: center;
 	font-family: "LEMONMILK-Regular", sans-serif;
 	font-size: 3vw;
@@ -395,7 +395,7 @@ a:hover {
 @media screen and (max-width: 800px) {
 	h2 {
 		font-size: 7vw;
-		padding-top: 5vw;
+		padding-top: 10vw;
 	}
 
 	h2:after {
@@ -405,7 +405,7 @@ a:hover {
 	h3 {
 		font-size: 6vw;
 		margin-top: 1vw;
-		margin-bottom: 2vw;
+		margin-bottom: 4vw;
 	}
 }
 
@@ -421,17 +421,44 @@ a:hover {
 	text-shadow: 3px 3px 3px var(--last-event-shadow-color);
 }
 
+.presentation div {
+	display: flex;
+	justify-content: space-between;
+	margin: 2vw 25vw;
+}
+
+.presentation img {
+	width: 20vw;
+	height: 20vw;
+}
+
 .presentation p {
 	color: var(--last-event-text-color);
 	text-align: justify;
-	margin: 2vw 30vw;
 	font-family: "Roboto-Regular", sans-serif;
 	font-size: 1vw;
+	width: 25vw;
 }
 
 @media screen and (max-width: 800px) {
 	.presentation {
 		padding-bottom: 10vw;
+	}
+
+	.presentation div {
+		flex-direction: column;
+		margin: 2vw 5vw;
+	}
+
+	.presentation img {
+		width: 60vw;
+		height: 60vw;
+		margin: 0 auto;
+	}
+
+	.presentation p {
+		width: initial;
+		font-size: 3vw;
 	}
 }
 
