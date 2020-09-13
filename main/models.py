@@ -42,9 +42,10 @@ class PV(models.Model):
 
 class Event(models.Model):
 	name = models.CharField(max_length=30)
-	affiche = models.ImageField(upload_to='affiches')
-	facebook_link = models.URLField(max_length=200)
+	affiche = models.ImageField(upload_to='affiches', blank=True)
+	facebook_link = models.URLField(max_length=200, blank=True)
 	pub_date = models.DateField(blank=True)
+	end_date = models.DateField(null=True)
 	description = models.TextField(blank=True)
 
 

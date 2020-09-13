@@ -10,7 +10,11 @@
     <div class="event">
         {% if event %}
             <h2>{{ event.name }}</h2>
-            <h3>{{ event.pub_date|date:'d/m/Y'}}</h3>
+            {% if event.end_date %}
+                <h3>{{ event.pub_date|date:'d/m/Y'}} - {{ event.end_date|date:'d/m/Y'}}</h3>
+            {% else %}
+                <h3>{{ event.pub_date|date:'d/m/Y'}}</h3>
+            {% endif %}
             <img src="{{ event.affiche.url }}" alt="">
             <a href="{{ event.facebook_link }}"><p>Lien Facebook</p></a>
             <p>{{ event.description|linebreaks }}</p>
