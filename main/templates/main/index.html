@@ -54,7 +54,7 @@
             <a href="{% url 'main:album' latest_album.id %}"><h2>{{ latest_album.name }}</h2></a>
             <h3>{{ latest_album.pub_date|date:'d/m/Y'}}</h3>
             <div class="photos">
-                {% for photo in latest_album.get_photos %}
+                {% for photo in latest_album.get_photos|slice:":10" %}
                     <img src="{{ photo.image.url }}" alt="">
                 {% endfor %}
             </div>
