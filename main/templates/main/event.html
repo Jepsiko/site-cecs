@@ -16,7 +16,9 @@
                 <h3>{{ event.pub_date|date:'d/m/Y'}}</h3>
             {% endif %}
             <img src="{{ event.affiche.url }}" alt="">
-            <a href="{{ event.facebook_link }}"><p>Lien Facebook</p></a>
+            {% if event.facebook_link %}
+                <a href="{{ event.facebook_link }}"><p>Lien Facebook</p></a>
+            {% endif %}
             <p>{{ event.description|linebreaks }}</p>
         {% endif %}
     </div>
