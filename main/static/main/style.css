@@ -766,6 +766,7 @@ a:hover {
 	width: 15vw;
 	height: 15vw;
 	border-radius: 15vw;
+	object-fit: cover;
 }
 
 .account .coord {
