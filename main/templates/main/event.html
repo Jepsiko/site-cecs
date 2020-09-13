@@ -19,7 +19,11 @@
             {% if event.facebook_link %}
                 <a href="{{ event.facebook_link }}"><p>Lien Facebook</p></a>
             {% endif %}
-            <p>{{ event.description|linebreaks }}</p>
+            <p>
+                {% with description=event.description|linebreaks %}
+                    {{description|urlize}}
+                {% endwith %}
+            </p>
         {% endif %}
     </div>
 {% endblock %}
