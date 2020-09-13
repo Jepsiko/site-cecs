@@ -692,6 +692,13 @@ a:hover {
 	font-size: 1vw;
 }
 
+.not-member {
+	margin: 10vw;
+	font-family: "Roboto-Light", sans-serif;
+	text-align: justify;
+	font-size: 1vw;
+}
+
 .register-form button {
 	margin-top: 2vw;
 	margin-left: 5vw;
@@ -707,6 +714,11 @@ a:hover {
 
 	.register-text {
 		font-size: 4vw;
+	}
+
+	.not-member {
+		font-size: 3vw;
+		margin: 50vw 5vw;
 	}
 
 	.register-form button {
