@@ -482,6 +482,11 @@ a:hover {
 		width: initial;
 		font-size: 3vw;
 	}
+
+	.social-network-image img {
+		width: 10vw;
+		height: 10vw;
+	}
 }
 
 /* LAST EVENT */
