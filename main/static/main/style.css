@@ -901,7 +901,7 @@ a:hover {
 	box-shadow: inset 0 10px 10px var(--comite-shadow-color);
 	padding-left: 15vw;
 	padding-right: 15vw;
-	text-align: left;
+	text-align: justify;
 	font-family: 'Open Sans', sans-serif;
 	margin-bottom: 5vw;
 }
