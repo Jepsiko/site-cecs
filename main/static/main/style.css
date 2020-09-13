@@ -430,7 +430,7 @@ a:hover {
 .presentation div {
 	display: flex;
 	justify-content: space-between;
-	margin: 2vw 25vw;
+	margin: 2vw 24vw;
 }
 
 .presentation img {
@@ -450,8 +450,8 @@ a:hover {
 }
 
 .social-network-image img {
-	width: 5vw;
-	height: 5vw;
+	width: 4vw;
+	height: 4vw;
 }
 
 .presentation p {
