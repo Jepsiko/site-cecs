@@ -51,6 +51,9 @@ class AlbumMultiuploadMixing(object):
 
 
 class AlbumAdmin(AlbumMultiuploadMixing, MultiUploadAdmin):
+	list_display = ('name', 'pub_date')
+	search_fields = ('name',)
+	ordering = ('-pub_date',)
 	inlines = [PhotoInlineAdmin, ]
 	multiupload_form = True
 	multiupload_list = False
@@ -71,86 +74,6 @@ class PhotoAdmin(AlbumMultiuploadMixing, MultiUploadAdmin):
 
 admin.site.register(Album, AlbumAdmin)
 admin.site.register(Photo, PhotoAdmin)
-
-# class AlbumAdmin(admin.ModelAdmin):
-# 	fieldsets = [
-# 		(None, {
-# 			'fields': ('name', 'pub_date')
-# 		}),
-# 	]
-# 	inlines = [PhotoInline]
-# 	list_display = ('name', 'pub_date')
-# 	list_filter = ['pub_date']
-# 	search_fields = ['name']
-#
-#
-# admin.site.register(Album, AlbumAdmin)
-#
-#
-# class AlbumAdmin(MultiUploadAdmin):
-# 	# default value of all parameters:
-# 	change_form_template = 'multiupload/change_form.html'
-# 	change_list_template = 'multiupload/change_list.html'
-# 	multiupload_template = 'multiupload/upload.html'
-# 	# if true, enable multiupload on list screen
-# 	# generaly used when the model is the uploaded element
-# 	multiupload_list = True
-# 	# if true enable multiupload on edit screen
-# 	# generaly used when the model is a container for uploaded files
-# 	# eg: gallery
-# 	# can upload files direct inside a gallery.
-# 	multiupload_form = True
-# 	# max allowed filesize for uploads in bytes
-# 	multiupload_maxfilesize = 3 * 2 ** 20 # 3 Mb
-# 	# min allowed filesize for uploads in bytes
-# 	multiupload_minfilesize = 0
-# 	# limit concurrent uploads in order to avoid timeouts (try 6–10 if experiencing problems)
-# 	multiupload_limitconcurrentuploads = None
-# 	# tuple with mimetype accepted
-# 	multiupload_acceptedformats = ("image/jpeg", "image/png",)
-#
-# 	def process_uploaded_file(self, uploaded, object, request):
-# 		'''
-# 		Process uploaded file
-# 		Parameters:
-# 			uploaded: File that was uploaded
-# 			object: parent object where multiupload is
-# 			request: request Object
-# 		Must return a dict with:
-# 		return {
-# 			'url': 'url to download the file',
-# 			'thumbnail_url': 'some url for an image_thumbnail or icon',
-# 			'id': 'id of instance created in this method',
-# 			'name': 'the name of created file',
-#
-# 			# optionals
-# 			"size": "filesize",
-# 			"type": "file content type",
-# 			"delete_type": "POST",
-# 			"error" = 'Error message or jQueryFileUpload Error code'
-# 		}
-# 		'''
-# 		# example:
-# 		title = kwargs.get('title', [''])[0] or uploaded.name
-# 		f = self.model(upload=uploaded, title=title)
-# 		f.save()
-# 		return {
-# 			'url': f.image_thumb(),
-# 			'thumbnail_url': f.image_thumb(),
-# 			'id': f.id,
-# 			'name': f.title
-# 		}
-#
-# 	def delete_file(self, pk, request):
-# 		'''
-# 		Function to delete a file.
-# 		'''
-# 		# This is the default implementation.
-# 		obj = get_object_or_404(self.queryset(request), pk=pk)
-# 		obj.delete()
-#
-#
-# admin.site.register(Album, AlbumAdmin)
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -174,7 +97,7 @@ admin.site.register(Chant, ChantAdmin)
 class EventAdmin(admin.ModelAdmin):
 	list_display = ('name', 'pub_date')
 	search_fields = ('name',)
-	ordering = ('pub_date',)
+	ordering = ('-pub_date',)
 
 
 admin.site.register(Event, EventAdmin)
@@ -183,7 +106,7 @@ admin.site.register(Event, EventAdmin)
 class JournalAdmin(admin.ModelAdmin):
 	list_display = ('name', 'pub_date')
 	search_fields = ('name',)
-	ordering = ('pub_date',)
+	ordering = ('-pub_date',)
 
 
 admin.site.register(Journal, JournalAdmin)
@@ -192,7 +115,7 @@ admin.site.register(Journal, JournalAdmin)
 class PVAdmin(admin.ModelAdmin):
 	list_display = ('name', 'pub_date')
 	search_fields = ('name',)
-	ordering = ('pub_date',)
+	ordering = ('-pub_date',)
 
 
 admin.site.register(PV, PVAdmin)
