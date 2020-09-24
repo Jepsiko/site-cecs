@@ -1039,7 +1039,8 @@ a:hover {
 
 @media screen and (max-width: 800px) {
 	.album img {
-		max-width: none;
+		max-width: 95vw;
+		max-height: 97vh;
 	}
 }
 
