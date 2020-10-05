@@ -13,7 +13,7 @@ class IndexView(generic.TemplateView):
 	def get_context_data(self, **kwargs):
 		context = super(IndexView, self).get_context_data(**kwargs)
 		context['latest_album'] = Album.objects.order_by('pub_date').last()
-		context['incoming_event'] = Event.objects.order_by('pub_date').last()
+		context['incoming_event'] = Event.objects.filter(pub_date__gte=timezone.now()).order_by('pub_date').first()
 		return context
 
 
