@@ -16,6 +16,10 @@
 	--incoming-event-bg-color: dodgerblue;
 	--incoming-event-shadow-color: royalblue;
 
+	--ongoing-event-text-color: whitesmoke;
+	--ongoing-event-bg-color: dodgerblue;
+	--ongoing-event-shadow-color: royalblue;
+
 	--comite-text-color: dodgerblue;
 	--comite-bg-color: whitesmoke;
 	--comite-shadow-color: lightgrey;
@@ -567,6 +571,59 @@ a:hover {
 	}
 
 	.incoming-event img {
+		max-height: none;
+		width: 100%;
+		height: auto;
+		border-left: none;
+		border-right: none;
+	}
+}
+
+/* ONGOING EVENT */
+
+.ongoing-event {
+	background-color: var(--ongoing-event-bg-color);
+	box-shadow: inset 0 10px 10px var(--ongoing-event-shadow-color);
+	padding-bottom: 50px;
+}
+
+.ongoing-event h2 {
+	color: var(--ongoing-event-text-color);
+	text-shadow: 3px 3px 3px var(--ongoing-event-shadow-color);
+}
+
+.ongoing-event h2::after {
+	border: 2px solid var(--ongoing-event-text-color);
+	box-shadow: 3px 3px 3px var(--ongoing-event-shadow-color);
+}
+
+.ongoing-event h3 {
+	color: var(--ongoing-event-text-color);
+	text-shadow: 3px 3px 3px var(--ongoing-event-shadow-color);
+}
+
+.ongoing-event a {
+	display: inline-block;
+	color: var(--ongoing-event-text-color);
+}
+
+.ongoing-event img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+	width: auto;
+	max-height: 25vw;
+	border: 2px solid var(--ongoing-event-text-color);
+	box-shadow: 3px 3px 3px var(--ongoing-event-shadow-color);
+}
+
+@media screen and (max-width: 800px) {
+	.ongoing-event {
+		padding-bottom: 10vw;
+	}
+
+	.ongoing-event img {
 		max-height: none;
 		width: 100%;
 		height: auto;

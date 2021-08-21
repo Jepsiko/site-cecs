@@ -63,6 +63,14 @@
         </div>
     {% endif %}
 
+    {% if ongoing_event %}
+        <div class="ongoing-event">
+            <h2>Évènement en cours</h2>
+            <a href="{% url 'main:event' ongoing_event.id %}"><h3>{{ ongoing_event.name }}</h3></a>
+            <img src="{{ ongoing_event.affiche.url }}" alt="">
+        </div>
+    {% endif %}
+
     {% if latest_album %}
         <div class="last-event">
             <a href="{% url 'main:album' latest_album.id %}"><h2>{{ latest_album.name }}</h2></a>
